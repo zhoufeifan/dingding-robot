@@ -1,0 +1,17 @@
+{
+  "name": "dingding-robot",
+  "version": "1.0.0",
+  "description": "dingding-robot",
+  "main": "report.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^4.1.0",
+    "node-cron": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
