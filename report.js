@@ -27,7 +27,10 @@ function sendMessage() {
   });
 }
 
-cron.schedule('5 6 * * 1', () => {
+cron.schedule('22 19 * * 1', () => {
   sendMessage();
+},{
+  scheduled: true,
+  timezone: "Asia/Tokyo"
 });
 // sendMessage();
