@@ -2,12 +2,12 @@
 const axios = require('axios');
 const color = require('chalk');
 const cron = require('node-cron');
-const { report } = require('./token_config.json');
+const { report, report1 } = require('./token_config.json');
 function sendMessage() {
   axios({
     method: 'post',
-    // url: `https://oapi.dingtalk.com/robot/send?access_token=${report1}`,
-    url: `https://oapi.dingtalk.com/robot/send?access_token=${report}`,
+    url: `https://oapi.dingtalk.com/robot/send?access_token=${report1}`,
+    // url: `https://oapi.dingtalk.com/robot/send?access_token=${report}`,
     headers: { 'Content-Type': 'application/json' },
     data: {
       "msgtype": "text", 
@@ -27,6 +27,7 @@ function sendMessage() {
   });
 }
 
-cron.schedule('0 17 * * 5', () => {
+cron.schedule('2 6 * * 1', () => {
   sendMessage();
 });
+// sendMessage();
