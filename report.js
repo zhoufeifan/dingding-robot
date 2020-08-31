@@ -6,7 +6,7 @@ const { report, report1 } = require('./token_config.json');
 function sendMessage() {
   axios({
     method: 'post',
-    url: `https://oapi.dingtalk.com/robot/send?access_token=${report1}`,
+    url: `https://oapi.dingtalk.com/robot/send?access_token=${report}`,
     // url: `https://oapi.dingtalk.com/robot/send?access_token=${report}`,
     headers: { 'Content-Type': 'application/json' },
     data: {
@@ -27,10 +27,10 @@ function sendMessage() {
   });
 }
 
-cron.schedule('26 19 * * 1', () => {
+// 东京时间18点 ===> 北京时间 17点
+cron.schedule('0 18 * * 5', () => {
   sendMessage();
 },{
   scheduled: true,
   timezone: "Asia/Tokyo"
 });
-// sendMessage();
