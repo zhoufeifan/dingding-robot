@@ -27,7 +27,7 @@ function sendMessage() {
   });
 }
 
-cron.schedule('22 19 * * 1', () => {
+cron.schedule('26 19 * * 1', () => {
   sendMessage();
 },{
   scheduled: true,
